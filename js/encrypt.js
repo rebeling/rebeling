@@ -1,5 +1,12 @@
 const isNode = typeof window === "undefined";
 
+const encoder = isNode
+  ? new (require("util").TextEncoder)()
+  : new TextEncoder();
+const decoder = isNode
+  ? new (require("util").TextDecoder)()
+  : new TextDecoder();
+
 function base64Encode(str) {
   return isNode ? Buffer.from(str, "binary").toString("base64") : btoa(str);
 }
@@ -9,23 +16,24 @@ function base64Decode(str) {
 }
 
 function encrypt(text, key) {
-  let result = "";
-  for (let i = 0; i < text.length; i++) {
-    const charCode = text.charCodeAt(i) ^ key.charCodeAt(i % key.length);
-    result += String.fromCharCode(charCode);
-  }
-  return base64Encode(result);
+  const textBytes = encoder.encode(text);
+  const keyBytes = encoder.encode(key);
+  const resultBytes = textBytes.map(
+    (byte, i) => byte ^ keyBytes[i % keyBytes.length],
+  );
+  const binaryStr = String.fromCharCode(...resultBytes);
+  return base64Encode(binaryStr);
 }
 
 function decrypt(encryptedText, key) {
   try {
-    const text = base64Decode(encryptedText);
-    let result = "";
-    for (let i = 0; i < text.length; i++) {
-      const charCode = text.charCodeAt(i) ^ key.charCodeAt(i % key.length);
-      result += String.fromCharCode(charCode);
-    }
-    return result;
+    const binaryStr = base64Decode(encryptedText);
+    const encryptedBytes = Uint8Array.from(binaryStr, (c) => c.charCodeAt(0));
+    const keyBytes = encoder.encode(key);
+    const decryptedBytes = encryptedBytes.map(
+      (byte, i) => byte ^ keyBytes[i % keyBytes.length],
+    );
+    return decoder.decode(decryptedBytes);
   } catch (e) {
     console.error("Decryption failed:", e);
     return "";
