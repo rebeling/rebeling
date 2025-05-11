@@ -1,0 +1,202 @@
+{
+  "basics": {
+    "name": "Matthias Rebel",
+    "label": "Senior Software Engineer",
+    "image": "images/portrait.png",
+    "email": "m.rebel@gmx.net",
+    "phone": "0162 1042333",
+    "summary": "I am a passionate software developer with a unique combination of deep technical knowledge and a broad, strategic perspective. My foundation in computational linguistics enables me to seamlessly integrate human language technologies, machine learning, and AI, unlocking new dimensions of product functionality and user engagement.\n\nWith a strong commitment to continuous improvement, I excel at exploring complex topics in depth while maintaining a clear focus on the broader picture. Balancing specialization with generalist capabilities, I consistently deliver innovative, high-impact solutions aligned with business objectives.\n\nAs a proactive learner and problem solver, I adopt an open-minded approach, emphasizing knowledge transfer and empathy to craft effective, impactful solutions. By aligning business needs with smart technology choices, and leveraging agile practices and automation, I drive efficient, fast-paced development cycles supported by continuous feedback and a focus on delivering real-world value.",
+    "location": {
+      "address": "Castorring 32",
+      "postalCode": "16321",
+      "city": "Bernau bei Berlin",
+      "countryCode": "DE",
+      "region": "Brandenburg"
+    },
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "rebeling",
+        "url": "https://github.com/rebeling"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "matthias-rebel-525b3333",
+        "url": "https://www.linkedin.com/in/matthias-rebel-525b3333/"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Universum AG",
+      "location": "Berlin",
+      "position": "Senior Software Engineer",
+      "url": "https://universum.com",
+      "startDate": "2018-10",
+      "summary": "Summary",
+      "highlights": [
+        "Designed and implemented an AI-powered tool integrating chatbot capabilities with automated email responses, leveraging company's knowledge base and ChatGPT (Docker, Python, FastAPI, OpenAI, Redis, JavaScript, Vue.js, GitLab CI).",
+        "Engineered APIs for Belenios secure cryptographic online voting system integration, supporting 60,000 users and processing 600 votes/30 seconds (Python, FastAPI).",
+        "Built and maintained content pool aggregating news and events data for app integration (Python, Elasticsearch).",
+        "Developed custom Drupal module with AI-driven NLP-enhanced search functionality (PHP, Python, Watson, spaCy, Elasticsearch).",
+        "Optimized Git collaboration workflows and enhanced deployment pipelines (Git, GitLab, Make, Ansible).",
+        "Organized and hosted Drupal Meetup Group event fostering community engagement."
+      ]
+    },
+    {
+      "name": "Retresco GmbH",
+      "location": "Berlin",
+      "position": "Software Engineer",
+      "url": "https://retresco.com",
+      "startDate": "2011-12",
+      "endDate": "2018-07",
+      "summary": "Summary [Zeugnis](/data/rtr.pdf)",
+      "highlights": [
+        "Developed stream processing pipeline and personalization algorithm for real-time content delivery (Python, Flask, Kafka, Elasticsearch).",
+        "Provided technical consultancy guiding architecture decisions and best practices.",
+        "Refactored monolithic applications into microservices with containerization and CI/CD pipelines.",
+        "Designed and implemented GUI for TMS with frontend-backend integration (AngularJS, Tornado, Elasticsearch).",
+        "Developed relation extraction system for short message analysis."
+      ]
+    },
+    {
+      "name": "DFKI GmbH",
+      "location": "Berlin",
+      "position": "Student Researcher",
+      "startDate": "2009-05",
+      "endDate": "2011-04",
+      "highlights": [
+        "Developed multilingual mobile dialogue assistant (PHP, Objective‑C).",
+        "Designed classification algorithm for question‑answer pair detection.",
+        "Enhanced user interaction and dialogue structures for diploma thesis project."
+      ]
+    },
+    {
+      "name": "Universität Potsdam",
+      "location": "Potsdam",
+      "position": "Student Researcher",
+      "startDate": "2006-03",
+      "endDate": "2009-02",
+      "highlights": [
+        "Converted Word documents to XML for eXist‑db (Python, Tomcat).",
+        "Developed data retrieval interface for project website (Python).",
+        "Built CMS for personal staff websites (Python)."
+      ]
+    },
+    {
+      "name": "Pfefferwerk gGmbH",
+      "location": "Berlin",
+      "position": "Media Educator",
+      "startDate": "2003-09",
+      "endDate": "2005-07",
+      "highlights": [
+        "Conducted lectures on computer interaction for children.",
+        "Delivered training in Photoshop and digital drawing for trainees."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Universität Potsdam",
+      "location": "Potsdam",
+      "studyType": "Diploma",
+      "area": "Computational Linguistics",
+      "startDate": "2005-10",
+      "endDate": "2011-10",
+      "score": "1.5",
+      "courses": [
+        "Optimierung der Dialogstrukturen einer bilingualen elektronischen Kommunikationshilfe",
+        "Computer Assistance in Bilingual Task-Oriented Human-Human Dialogues (HCII‑2011)"
+      ]
+    },
+    {
+      "institution": "Wessenberg Gymnasium",
+      "location": "Konstanz",
+      "studyType": "High School Diploma",
+      "endDate": "1999-05"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "keywords": ["Python", "PHP", "JavaScript"]
+    },
+    {
+      "keywords": [
+        "Node",
+        "Python",
+        "Postgres",
+        "Redis",
+        "Serverless",
+        "Elasticsearch"
+      ],
+      "level": "Senior",
+      "name": "Backend"
+    },
+    {
+      "name": "Frameworks & Tools",
+      "keywords": [
+        "Docker",
+        "FastAPI",
+        "GitLab CI",
+        "Ansible",
+        "Make",
+        "Drupal"
+      ]
+    },
+    {
+      "keywords": ["AWS", "Gitlab", "Jenkins", "Ansible", "Traefik"],
+      "level": "Senior",
+      "name": "Devops"
+    },
+    {
+      "name": "Technologies & Concepts",
+      "keywords": [
+        "Natural Language Processing",
+        "Machine Learning",
+        "OpenAPI",
+        "A2A",
+        "MCP",
+        "Microservvices"
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Ultimate AWS Certified Developer Associate 2025 DVA-C02",
+      "issuer": "Udemy - Stephane Maarek",
+      "date": "2025-01"
+    },
+    {
+      "name": "AI-Driven Management: Leading More Efficiently",
+      "issuer": "LinkedIn - Sylvia Stankova",
+      "date": "2025-01"
+    },
+    {
+      "name": "Design of Computer Programs",
+      "issuer": "Udacity",
+      "date": "2017-01"
+    },
+    {
+      "name": "Introduction to Systems Engineering",
+      "issuer": "Coursera",
+      "date": "2017-01"
+    }
+  ],
+  "languages": [
+    {
+      "language": "German",
+      "fluency": "Native Speaker"
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent"
+    }
+  ],
+  "projects": [],
+  "volunteer": [],
+  "awards": [],
+  "publications": [],
+  "interests": [],
+  "references": []
+}
