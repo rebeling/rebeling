@@ -25,14 +25,20 @@ function encrypt(text, key) {
   return base64Encode(binaryStr);
 }
 
+function isValid(decrypted) {
+  return decrypted.includes("<!--VALID-->");
+}
+
 function decrypt(encryptedText, key) {
   try {
-    const binaryStr = base64Decode(encryptedText);
+    const binaryStr = atob(encryptedText); // base64Decode
     const encryptedBytes = Uint8Array.from(binaryStr, (c) => c.charCodeAt(0));
     const keyBytes = encoder.encode(key);
+
     const decryptedBytes = encryptedBytes.map(
       (byte, i) => byte ^ keyBytes[i % keyBytes.length],
     );
+
     return decoder.decode(decryptedBytes);
   } catch (e) {
     console.error("Decryption failed:", e);
