@@ -65,6 +65,7 @@
       "position": "Student Researcher",
       "startDate": "2009-05",
       "endDate": "2011-04",
+      "summary": "As a Student Researcher at DFKI GmbH in Berlin (2009–2011), contributed to the development of a multilingual mobile dialogue assistant. Designed a classification algorithm to detect question–answer pairs and improved dialogue structures for a diploma thesis project. Positive feedback in [performance review](/data/dfki.pdf).",
       "highlights": [
         "Developed multilingual mobile dialogue assistant (PHP, Objective‑C).",
         "Designed classification algorithm for question‑answer pair detection.",
@@ -108,9 +109,10 @@
       "courses": []
     },
     {
+      "area": "High School",
       "institution": "Wessenberg Gymnasium",
       "location": "Konstanz",
-      "studyType": "High School Diploma",
+      "studyType": "Diploma",
       "endDate": "1999-05"
     }
   ],
@@ -152,6 +154,18 @@
         "MCP",
         "A2A"
       ]
+    }
+  ],
+  "publications": [
+    {
+      "name": "Computer Assistance in Bilingual Task-Oriented Human-Human Dialogues",
+      "publisher": "In Proceedings of the 14th International Conference on Human-Computer Interaction",
+      "releaseDate": "2011-07-09"
+    },
+    {
+      "name": "Optimierung der Dialogstrukturen einer bilingualen elektronischen Kommunikationshilfe",
+      "publisher": "Diploma thesis at Univertät Potsdam",
+      "releaseDate": "2011-10-01"
     }
   ],
   "certificates": [
@@ -198,18 +212,6 @@
     }
   ],
   "awards": [],
-  "publications": [
-    {
-      "name": "Computer Assistance in Bilingual Task-Oriented Human-Human Dialogues",
-      "publisher": "In Proceedings of the 14th International Conference on Human-Computer Interaction",
-      "releaseDate": "2011-07-09"
-    },
-    {
-      "name": "Diploma thesis: Optimierung der Dialogstrukturen einer bilingualen elektronischen Kommunikationshilfe",
-      "publisher": "Diploma thesis at Univertät Potsdam",
-      "releaseDate": "2011-10-01"
-    }
-  ],
   "interests": [
     {
       "name": "Sustainable Living",
