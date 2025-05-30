@@ -1,0 +1,23 @@
+<div id="random-footer-image-wrapper" style="background: #122232">
+    <img
+        id="random-footer-image"
+        alt="Random footer"
+        style="
+            width: 100%;
+            max-height: 100px;
+            object-fit: scale-down;
+            background: #122232;
+        "
+    />
+</div>
+<script>
+    const images = [
+        "/footer-images/Bildschirmfoto 2025-05-27 um 22.35.35.png",
+        "/footer-images/Bildschirmfoto 2025-05-27 um 22.35.44.png",
+        "/footer-images/Bildschirmfoto 2025-05-27 um 22.35.52.png",
+    ];
+    const randomImage = images[Math.floor(Math.random() * images.length)];
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("random-footer-image").src = randomImage;
+    });
+</script>
