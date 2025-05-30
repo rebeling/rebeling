@@ -1,0 +1,641 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Matthias Rebel</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+main {
+  display: block;
+}
+
+body {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.42857143;
+  background-color: #F0F0F0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Helvetica', 'Segoe UI', 'Calibri', 'sans-serif';
+}
+
+/* Typical page borders are awkward when rendered to PDF. */
+body.pdf {
+  background-color: #FFFFFF;
+}
+
+/* Adobe or wkhtmltopdf has issues with the <main> tag, so we use <div> for
+the PDF case, <main> for the HTML case, and style both via an ID. */
+#main {
+  background-color: #FFF;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #E6E6E6;
+}
+
+body.pdf > #main {
+  border: none;
+}
+
+#container > header {
+  padding-top: 6em;
+  padding-bottom: 1em;
+}
+
+body.pdf #container > header {
+  padding: 0;
+}
+
+#main > #container > section {
+  margin-left: 150px;
+  position: relative;
+  display: block;
+}
+
+section > div {
+  margin-bottom: 60px;
+}
+
+span.fa
+{
+  font-size: 56px;
+  position: absolute;
+  top: 37px;
+  transform: translateY(-50%);
+  left: -100px;
+  color: #1a4367;
+}
+
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #EEE;
+}
+
+.tenure, .keywords {
+  font-size: 75%;
+}
+
+h1 {
+  margin: 0;
+  font-size: 46px;
+  display: inline-block;
+}
+
+h2 {
+  font-size: 30px;
+  color: #4376a2;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding-top: 20px;
+  margin-bottom: 60px;
+}
+
+h3 {
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+a, a:visited {
+  color: #428BCA;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.defunct {
+  color: #989898;
+  font-weight: bold;
+}
+
+#summary {
+  font-size: 150%;
+  margin-left: 0;
+  padding: 20px 0;
+}
+
+#summary > p > strong {
+  font-size: 1.25em;
+}
+
+#contact {
+  float: right;
+}
+
+#summary > header > .fa-info {
+  font-size: 70px;
+  /*letter-spacing: 5px; PDFs hate letter-spacing */
+  text-transform: uppercase;
+  font-weight: normal;
+  top: 50%;
+  left: -85px;
+  transform: translateY(-50%);
+}
+
+#summary h2 {
+  display: none;
+}
+
+
+.label-keyword {
+  display: inline-block;
+  background: #e8f4ff;
+  color: black;
+  font-size: 0.9em;
+  padding: 5px;
+  border: 1px solid #357ebd;
+  border-radius: 5px;
+  margin-top: 2px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.notes {
+  font-size: 10px;
+  display: block;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.card-skills {
+    position: relative;
+}
+.card-nested {
+    min-height: 0;
+    margin-bottom: 10px;
+    border-width: 1px 0 0 0;
+}
+.card {
+    background: #FFF;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.skill-level {
+  border-radius: 3px;
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 0;
+  width: 10px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+}
+.skill-level .skill-progress {
+  position: absolute;
+  border-radius: 3px;
+  bottom: 0;
+  width: 100%;
+  -webkit-transition: height 1s ease;
+}
+.skill-level .skill-progress.beginner {
+  height: 50%;
+  background: #e74c3c;
+}
+.skill-level .skill-progress.intermediate {
+  height: 70%;
+  background: #f1c40f;
+}
+.skill-level .skill-progress.advanced {
+  height: 80%;
+  background: #428bca;
+}
+.skill-level .skill-progress.master {
+  height: 95%;
+  background: #5cb85c;
+}
+.skill-info {
+  margin-left: 10px;
+}
+@media (max-width: 480px) {
+  .skill-info {
+    margin-left: 20px;
+  }
+}
+.skill-info > strong {
+  font-weight: 400;
+  font-size: 24px;
+  color: #1d1d1d;
+  line-height: 24px;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+.card-skills {
+  position: relative;
+}
+
+.space-top {
+    margin-top: 5px;
+}
+
+#container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#elevator-pitch {
+  text-align: center;
+  font-size: 24px;
+  color: #BFC1C3;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+.res-label {
+  font-style: italic;
+}
+</style>
+
+
+  </head>
+
+
+  <body>
+    <main id="main"> 
+      <div id="container">
+      <header>
+
+
+        <h1>Matthias Rebel</h1>
+
+        <div id="contact">
+          <div class="email"><a href="mailto:m.rebel@gmx.net">m.rebel@gmx.net</a></div>
+          <div class="phone">0162 1042333</div>
+          
+        </div>
+      </header>
+
+
+
+
+<hr>
+<section id="summary">
+    <header>
+      <span class="fa fa-lg fa-info"></span>  <h2>info</h2>
+    </header>
+    I&#39;m a passionate software developer who pairs deep technical expertise with a wide strategic lens. My background in computational linguistics lets me weave human-language technologies, machine learning, and AI into products that engage users and unlock new value. I&#39;m currently diving into multi-agent systems—exploring how autonomous agents can cooperate to solve problems.</p>
+<p>Whether I&#39;m building large-scale NLP pipelines or refining user flows, I keep one eye on the technical detail and the other on the bigger business goal. I thrive on continuous improvement: digging into complex topics, sharing what I learn, and iterating quickly through agile practices and automation. That mix of specialization and generalist mindset helps me deliver high-impact, real-world solutions on fast timelines.</p>
+<p>I approach every project with curiosity, empathy, and a bias for action—aligning smart technology choices with clear business outcomes.
+</section>
+
+
+
+
+<hr>
+<section id="skills">
+  <header>
+  <h2>Skills</h2>
+  </header>
+  <span class="fa fa-lg fa-code"></span>
+  <ul class="list-unstyled">
+      <li class="card card-nested card-skills">
+        <div class="skill-level" rel="tooltip" title="Expert" data-placement="left">
+          <div class="skill-progress expert"></div>
+        </div>
+        <div class="skill-info">
+          <strong>Programming Languages</strong>
+          <div class="space-top labels">
+                <div class="label label-keyword">
+                  <span class="kw">Python</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">PHP</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">JavaScript</span>
+                </div>
+          </div>
+        </div>
+      </li>
+      <li class="card card-nested card-skills">
+        <div class="skill-level" rel="tooltip" title="Senior" data-placement="left">
+          <div class="skill-progress senior"></div>
+        </div>
+        <div class="skill-info">
+          <strong>Backend Technologies</strong>
+          <div class="space-top labels">
+                <div class="label label-keyword">
+                  <span class="kw">Node.js</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">PostgreSQL</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">Redis</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">Elasticsearch</span>
+                </div>
+          </div>
+        </div>
+      </li>
+      <li class="card card-nested card-skills">
+        <div class="skill-level" rel="tooltip" title="Senior" data-placement="left">
+          <div class="skill-progress senior"></div>
+        </div>
+        <div class="skill-info">
+          <strong>DevOps &amp; Infrastructure</strong>
+          <div class="space-top labels">
+                <div class="label label-keyword">
+                  <span class="kw">Docker</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">AWS</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">GitLab</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">Jenkins</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">Ansible</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">Traefik</span>
+                </div>
+          </div>
+        </div>
+      </li>
+      <li class="card card-nested card-skills">
+        <div class="skill-level" rel="tooltip" title="" data-placement="left">
+          <div class="skill-progress "></div>
+        </div>
+        <div class="skill-info">
+          <strong>Frameworks &amp; Tools</strong>
+          <div class="space-top labels">
+                <div class="label label-keyword">
+                  <span class="kw">FastAPI</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">Drupal</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">Make</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">GitLab CI</span>
+                </div>
+          </div>
+        </div>
+      </li>
+      <li class="card card-nested card-skills">
+        <div class="skill-level" rel="tooltip" title="" data-placement="left">
+          <div class="skill-progress "></div>
+        </div>
+        <div class="skill-info">
+          <strong>Concepts &amp; Architectures</strong>
+          <div class="space-top labels">
+                <div class="label label-keyword">
+                  <span class="kw">Serverless Architecture</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">Microservices Architecture</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">CI/CD Pipelines</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">Containerization</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">OpenAPI Specification</span>
+                </div>
+          </div>
+        </div>
+      </li>
+      <li class="card card-nested card-skills">
+        <div class="skill-level" rel="tooltip" title="" data-placement="left">
+          <div class="skill-progress "></div>
+        </div>
+        <div class="skill-info">
+          <strong>AI &amp; Data Technologies</strong>
+          <div class="space-top labels">
+                <div class="label label-keyword">
+                  <span class="kw">Natural Language Processing</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">Machine Learning</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">MCP</span>
+                </div>
+                <div class="label label-keyword">
+                  <span class="kw">A2A</span>
+                </div>
+          </div>
+        </div>
+      </li>
+  </ul>
+</section>
+
+
+
+
+
+
+
+
+
+
+<hr>
+<section id="employment">
+    <header>
+      <span class="fa fa-lg fa-building"></span>  <h2>employment</h2>
+    </header>
+
+<div>
+  <h3><em>Senior Software Engineer</em>,
+    
+    </h3>
+    <span class="tenure">2018-10 — Present</span>
+  <p><p>Led full-stack development and AI integration for a range of mission-critical projects, aligning deep technical implementation with strategic business goals. Spearheaded initiatives in automation, NLP, and secure systems design—contributing to product innovation, user engagement, and operational efficiency across the organization.</p>
+</p>
+  <ul>
+    <li>Designed and implemented an AI-powered tool integrating chatbot capabilities with automated email responses, leveraging the company&#39;s knowledge base and ChatGPT (Docker, Python, FastAPI, OpenAI, Redis, JavaScript, Vue.js, GitLab CI).</li>
+    <li>Engineered APIs for Belenios secure cryptographic online voting system integration, supporting 60,000 users and processing 600 votes per 30 seconds (Python, FastAPI).</li>
+    <li>Built and maintained a scalable content pool aggregating news and events data for seamless mobile app integration (Python, Elasticsearch).</li>
+    <li>Developed a custom Drupal module with AI-driven, NLP-enhanced search functionality (PHP, Python, Watson, spaCy, Elasticsearch).</li>
+    <li>Optimized team Git workflows and CI/CD pipelines, significantly reducing deployment time and boosting collaboration efficiency (Git, GitLab, Make, Ansible).</li>
+    <li>Organized and hosted local Drupal Meetups, driving community engagement and knowledge sharing.</li>
+  </ul>
+</div>
+<div>
+  <h3><em>Software Engineer</em>,
+    
+    </h3>
+    <span class="tenure">2011-12 — 2018-07</span>
+  <p><p>Owned core architecture and development of real-time, high-performance systems in a fast-paced consulting and product delivery environment. Delivered robust microservices and data pipelines that enabled personalization, automation, and scalable deployment—earning top feedback in <a href="/data/rtr.pdf">performance review</a>.</p>
+</p>
+  <ul>
+    <li>Developed a real-time stream processing pipeline and personalization algorithm for adaptive content delivery (Python, Flask, Kafka, Elasticsearch).</li>
+    <li>Provided technical consultancy to enterprise clients, guiding architecture decisions and best practices across projects.</li>
+    <li>Led refactoring of legacy monoliths into containerized microservices, introducing CI/CD automation and scalable infrastructure.</li>
+    <li>Designed and implemented a web-based GUI for a Translation Management System with seamless frontend-backend integration (AngularJS, Tornado, Elasticsearch).</li>
+    <li>Developed a relation extraction system for short message analysis, enabling efficient insights from unstructured text data.</li>
+  </ul>
+</div>
+<div>
+  <h3><em>Student Researcher</em>,
+    
+    </h3>
+    <span class="tenure">2009-05 — 2011-04</span>
+  <p><p>As a Student Researcher at DFKI GmbH in Berlin (2009–2011), contributed to the development of a multilingual mobile dialogue assistant. Designed a classification algorithm to detect question–answer pairs and improved dialogue structures for a diploma thesis project. Positive feedback in <a href="/data/dfki.pdf">performance review</a>.</p>
+</p>
+  <ul>
+    <li>Developed multilingual mobile dialogue assistant (PHP, Objective‑C).</li>
+    <li>Designed classification algorithm for question‑answer pair detection.</li>
+    <li>Enhanced user interaction and dialogue structures for diploma thesis project.</li>
+  </ul>
+</div>
+<div>
+  <h3><em>Student Researcher</em>,
+    
+    </h3>
+    <span class="tenure">2006-03 — 2009-02</span>
+  <p></p>
+  <ul>
+    <li>Converted Word documents to XML for eXist‑db (Python, Tomcat).</li>
+    <li>Developed data retrieval interface for project website (Python).</li>
+    <li>Built CMS for personal staff websites (Python).</li>
+  </ul>
+</div>
+<div>
+  <h3><em>Media Educator</em>,
+    
+    </h3>
+    <span class="tenure">2003-09 — 2005-07</span>
+  <p></p>
+  <ul>
+    <li>Conducted lectures on computer interaction for children.</li>
+    <li>Delivered training in Photoshop and digital drawing for trainees.</li>
+  </ul>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+<section id="education">
+    <header>
+      <span class="fa fa-lg fa-mortar-board"></span>  <h2>education</h2>
+    </header>
+<div>
+<h3>
+<a href="https://www.uni-potsdam.de">Universität Potsdam</a>
+</h3>
+<span class="tenure">2005-10 — 2011-10</span>
+
+</div>
+<div>
+<h3>
+Wessenberg Gymnasium
+</h3>
+
+
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+<section id="service">
+    <header>
+      <span class="fa fa-lg fa-child"></span>  <h2>service</h2>
+    </header>
+    <div>
+    <h3><em>Volunteer</em>,
+      PyData Berlin 2016
+    </h3>
+    <span class="tenure">2016-05</span>
+    <p><p>Supported event logistics and speaker coordination at PyData Berlin 2016, a community-driven conference focused on data science, machine learning, and Python. Helped ensure smooth operations for over 500 participants, gaining exposure to cutting-edge industry discussions and strengthening ties within the open-source Python and data science community.</p>
+</p>
+    </div>
+</section>
+<hr>
+<section id="writing">
+    <header>
+      <span class="fa fa-lg fa-pencil"></span>  <h2>writing</h2>
+    </header>
+    <div>
+    <h3><em>Optimierung der Dialogstrukturen einer bilingualen elektronischen Kommunikationshilfe</em>,
+
+      Diploma thesis at Univertät Potsdam</h3>
+      <span class="tenure">2011</span>
+      
+    </div>
+    <div>
+    <h3><em>Computer Assistance in Bilingual Task-Oriented Human-Human Dialogues</em>,
+
+      In Proceedings of the 14th International Conference on Human-Computer Interaction</h3>
+      <span class="tenure">2011</span>
+      
+    </div>
+</section>
+<hr>
+<section id="interests">
+    <header>
+      <span class="fa fa-lg fa-bicycle"></span>  <h2>interests</h2>
+    </header>
+    <div>
+    <h3><em>Sustainable Living</em></h3>
+    <span class="tenure">Current</span>
+    
+    </div>
+    <div>
+    <h3><em>Wildlife &amp; Nature</em></h3>
+    <span class="tenure">Current</span>
+    
+    </div>
+</section>
+
+      </div>
+    </main>
+  </body>
+</html>

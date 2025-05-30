@@ -1,0 +1,90 @@
+site_name: Agent Rebel
+site_description: Agent Rebel / shim to use agent rebel with LLMs
+site_url: https://github.com/rebeling/rebeling
+
+strict: true
+docs_dir: docs
+
+repo_name: rebeling/rebeling
+repo_url: https://github.com/rebeling/rebeling
+
+nav:
+  - Introduction: index.md
+  # - install.md
+  # - help.md
+  #  - troubleshooting.md
+  - changelog.md
+  - Documentation:
+      - posts/resume-as-code.md
+      - posts/ai-coding-assistents.md
+      - Dialogues:
+          - dialogues/dialogue1-2025-05-22.md
+          - dialogues/dialogue2-2025-05-23.md
+      - projects/fastfourier.md
+  - contributing.md
+  - license.md
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-auto
+        name: "Switch to light mode"
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-7
+        name: "Switch to dark mode"
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: pink
+      accent: pink
+      toggle:
+        icon: material/brightness-4
+        name: "Switch to system preference"
+  features:
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - navigation.path
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tracking
+    - toc.follow
+  # logo: "img/logo-white.svg"
+  favicon: "favicon.ico"
+  #custom_dir: overrides
+extra_css:
+  - styles/main-bg.css
+  - styles/extra.css
+  - styles/portfolio.css
+  - styles/agents.css
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+plugins:
+  # - blog:
+  #     blog_toc: true
+  #     post_url_format: "{categories}/{slug}"
+  #     post_excerpt_separator: <!-- more -->
+  - search
+
+extra:
+  # hide the "Made with Material for MkDocs" message
+  generator: false
