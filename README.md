@@ -4,6 +4,6 @@ Based on Martin Fowlers Any fool can...
 
 <!--
 
-mkdocs serve
+See RESUME.md
 
 -->
