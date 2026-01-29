@@ -27,8 +27,9 @@
     let color = if value < selected { color-active } else { color-inactive }
     dots += (
       box(
-        circle(
-          radius: size / 2,
+        rect(
+          width: size,
+          height: size,
           fill: color,
         ),
       ),
