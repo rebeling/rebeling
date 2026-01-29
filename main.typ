@@ -1,44 +1,33 @@
-// Main entry point for resume generation - Following Typst best practices
+// Main entry point for resume generation - Modern Typst approach
 
 #import "template/resume.typ": resume-template
-#import "template/layout.typ" as layout
-#import "template/elements.typ" as elements
 
-// Load resume data to extract name for template
-#let resume-data = yaml("data/resume.yml")
+// Load resume data
+#let base-resume-data = yaml("data/resume.yml")
 
-// Get the layout functions
-#let layout-functions = (
-  setup-document: layout.setup-document,
-  header-style: layout.header-style,
-  subheader-style: layout.subheader-style,
-  meta-text: layout.meta-text,
-  section-divider: layout.section-divider,
-  name-header: layout.name-header,
-  contact-info: layout.contact-info,
-  job-entry: layout.job-entry,
-  education-entry: layout.education-entry,
-  skill-icon: layout.skill-icon,
-  skill-entry: layout.skill-entry,
-  cert-entry: layout.cert-entry,
-  language-entry: layout.language-entry,
-  volunteer-entry: layout.volunteer-entry,
-  cover-letter-header: layout.cover-letter-header,
-  cover-letter-content: layout.cover-letter-content,
-  bullet-list: layout.bullet-list,
-  numbered-list: layout.numbered-list,
-  achievement-list: layout.achievement-list,
-  dot-ratings: elements.dot-ratings
-)
+// Load secrets (PII)
+// Warning: This file must exist. If missing, create data/secrets.yml
+#let secrets-data = yaml("data/secrets.yml")
 
-// Use the resume template with required parameters
+// Merge secrets into resume data
+#let resume-data = base-resume-data + secrets-data
+
+// Try to load cover letter data (if available)
+#let cover-letter-data = {
+  // Check for cover letter argument or default file
+  if sys.inputs.at("cover", default: none) != none {
+    yaml("data/cover-" + sys.inputs.cover + ".yml")
+  } else {
+    none
+  }
+}
+
+// Use the modernized resume template
 #show: doc => resume-template(
   name: resume-data.firstname + " " + resume-data.lastname,
   resume-data: resume-data,
-  layout-functions: layout-functions,
-  email: resume-data.email,
-  phone: resume-data.phone,
-  github: resume-data.github,
+  cover-letter-data: cover-letter-data,
+  include-cover-letter: cover-letter-data != none,
   doc
 )
 

@@ -4,12 +4,9 @@ pronouns: "he/him"
 profile-image: "assets/portrait.png"
 short-description: Computational Linguist turned Software Engineer building scalable language tech.
 position: "Senior Software Engineer"
-email: m.rebel@gmx.net
-phone: +49 162 1042333
 github: rebeling
 linkedin: https://www.linkedin.com/in/matthias-rebel-525b3333/
 website: https://rebeling.github.io/agent-rebel/
-address: Castorring 32, Bernau bei Berlin, DE, 16321
 # address-street: Castorring 32
 # address-city: Bernau bei Berlin, DE
 # address-postal: 16321
@@ -22,7 +19,7 @@ languages:
   german:
     level: "native"
   english:
-    level: "advanced"
+    level: "native"
 
 # languages:
 #   headline: Languages
@@ -31,11 +28,11 @@ languages:
 #     English: Experienced
 
 introduction:
-  headline: Professioanal summary
+  headline: Professional Summary
   text: |
-    I'm a passionate software developer who pairs deep technical expertise with a wide strategic lens. My background in computational linguistics lets me weave human-language technologies, machine learning, and AI into products that engage users and unlock new value. I'm currently diving into multi-agent systems exploring how autonomous agents can cooperate to solve problems.
-
-    Whether I'm building large-scale NLP pipelines or refining user flows, I keep one eye on the technical detail and the other on the bigger business goal. I thrive on continuous improvement: digging into complex topics, sharing what I learn, and iterating quickly through agile practices and automation. That mix of specialisation and generalist mindset helps me deliver high-impact, real-world solutions on fast timelines. I approach every project with curiosity, empathy, and a bias for action aligning smart technology choices with clear business outcomes.
+    I'm a passionate Senior Software Engineer who pairs deep technical expertise with a wide strategic lens. My background in computational linguistics lets me weave human-language technologies, machine learning, and AI into products that engage users and unlock new value. I am an active proponent of Open Source, contributing significantly to the Drupal community and pioneering HTMX integrations for efficient, modern web interfaces.
+    
+    Whether I'm building large-scale NLP pipelines or refining user flows, I keep one eye on the technical detail and the other on the bigger business goal. I thrive on continuous improvement: digging into complex topics, sharing what I learn, and iterating quickly through agile practices and automation. Currently, I am exploring multi-agent systems to discover how autonomous agents can cooperate to solve complex problems.
 
 jobs:
   headline: Employment history
@@ -141,37 +138,31 @@ skills:
     Ansible: Experienced
     Drupal: Experienced
     Vue.js: Skillful
+    HTMX: Experienced
     NLP: Expert
     Machine Learning: Experienced
     Microservices: Experienced
     CI/CD: Experienced
     OpenAPI: Experienced
 
-references:
-  headline: References
-  items:
-    - name: Tarn Barford
-      title: Lead Developer
-      email: tarn@barford.com
-      phone: +49...
-      address: Berlin, Germany
+
 
 volunteer:
-  headline: Volunteer
+  headline: Open Source & Community
   items:
-    title: PYDATA BERLIN 2016
+    title: Drupal Community Contributor
     description: |
-      Supported event logistics and speaker coordination at PyData Berlin 2016,
-      a community-driven conference focused on data science, machine learning, and Python.
-      Helped ensure smooth operations for over 500 participants.
+      Active contributor to the Drupal ecosystem, focusing on module development and modern frontend integration.
+      Spearheading the integration of HTMX with Drupal to enhance user interactivity without heavy client-side frameworks.
+      Regular participant in community events and code sprints.
 
-# publications:
-#   headline: Publications
-#   items:
-#     title: "AI-Driven Management: Leading More Efficiently at LinkedIn"
-#     date: JAN 2011
-#     description: |
-#       Presented a paper on AI-driven management at the International Conference on Management Science.
+publications:
+  headline: Publications
+  items:
+    title: "COMPUTER ASSISTANCE IN BILINGUAL TASK-ORIENTED HUMAN-HUMAN DIALOGUES"
+    date: "Jul 09, 2011"
+    description: |
+      Published in Proceedings of the 14th International Conference on Human-Computer Interaction
 
 hobbies:
   headline: Hobbies
