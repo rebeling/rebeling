@@ -1,8 +1,20 @@
-// Layout and styling functions for resume - Following Typst best practices
+// Layout and styling functions for resume - Modern Typst approach
+
+#import "elements.typ": dot-ratings
 
 #let primary-color = rgb("#1e40af")
-#let secondary-color = rgb("#64748b")
+#let secondary-color = rgb("#64748b") 
 #let accent-color = rgb("#0f172a")
+
+// Consistent spacing system
+#let spacing = (
+  xs: 0.15em,
+  sm: 0.3em, 
+  md: 0.6em,
+  lg: 1em,
+  xl: 1.4em,
+  section: 1.5em
+)
 
 // List rendering functions - defined early for use in other functions
 #let bullet-list(items) = {
@@ -39,7 +51,7 @@
 
   // Text hierarchy using set rules
   set text(
-    font: "Arial",
+    font: ("Palatino", "Times New Roman", "Arial"),
     size: 10pt,
     fill: accent-color,
   )
@@ -66,7 +78,7 @@
 
 #let header-style(body) = {
   set text(size: 13pt, weight: "bold", fill: primary-color)
-  upper(body)
+  body
 }
 
 #let subheader-style(body) = {
@@ -90,55 +102,58 @@
 }
 
 #let skill-icon() = {
-  let blocks = (
-    box(fill: silver, width: 13pt, height: 13pt),
-    box(fill: black, width: 13pt, height: 13pt),
-    box(fill: black, width: 13pt, height: 13pt),
-  )
-  align(right)[#blocks.join(h(1.3pt))]
-  v(-1.05em)
-  let blocks = (
-    box(fill: silver, width: 13pt, height: 13pt),
-    box(fill: black, width: 13pt, height: 13pt),
-  )
-  align(right)[#blocks.join(h(1.3pt))]
-  v(-1.05em)
-  let blocks = (
-    box(fill: silver, width: 13pt, height: 13pt),
-  )
-  align(right)[#blocks.join(h(1.3pt))]
+  // Clean decorative icon using modern Typst approach
+  align(right)[
+    #stack(
+      dir: ttb,
+      spacing: 1pt,
+      align(right)[
+        #rect(fill: rgb("#374151"), width: 4pt, height: 4pt)
+        #h(1pt)
+        #rect(fill: rgb("#374151"), width: 4pt, height: 4pt)
+        #h(1pt)
+        #rect(fill: rgb("#374151"), width: 4pt, height: 4pt)
+      ],
+      align(right)[
+        #rect(fill: rgb("#9ca3af"), width: 4pt, height: 4pt)
+        #h(1pt)
+        #rect(fill: rgb("#9ca3af"), width: 4pt, height: 4pt)
+      ],
+      align(right)[
+        #rect(fill: rgb("#9ca3af"), width: 4pt, height: 4pt)
+      ]
+    )
+  ]
 }
 
 
 #let skill-entry(skill, level) = {
-
   let level-mapping = (
     "Expert": 5,
-    "Experienced": 4,
+    "Experienced": 4, 
     "Skillful": 3,
     "Intermediate": 2,
     "Beginner": 1
   )
-
+  
   let skill-level = level-mapping.at(level, default: 3)
-
-  grid(
-    columns: 1,
+  
+stack(
+    spacing: 0.3em,
     [
-      #text(size: 10pt, baseline: 5pt, weight: "medium")[#skill]
-      #text(size: 10pt, baseline: 5pt, fill: secondary-color)[(#level)]
-      #let blocks = ()
-      #for i in range(5) {
-        if i < skill-level {
-          blocks.push(box(fill: black, width: 13pt, height: 13pt))
-        } else {
-          blocks.push(box(fill: gray, width: 13pt, height: 13pt))
-        }
-      }
-      #align(left)[#blocks.join(h(1.2pt))]
-    ]
+      #text(size: 10pt, weight: "medium")[#skill] 
+      #text(size: 9pt, fill: rgb("#6b7280"))[(#level)]
+    ],
+    // Rectangle ratings
+    dot-ratings(
+      skill-level,
+      5,
+      size: 6pt,
+      spacing: 1pt,
+      color-active: rgb("#374151"),
+      color-inactive: rgb("#e5e7eb")
+    )
   )
-  v(-0.4em)
 }
 
 
@@ -177,42 +192,40 @@
 }
 
 #let job-entry(role, company, period, summary, highlights: none) = {
-
-
-  subheader-style[#role#"," #company]
-  v(0.1em)
-  meta-text[#period]
-  v(0.1em)
-  summary
-  v(0.3em)
-  if highlights != none and highlights.len() > 0 [
-    #bullet-list(highlights)
-  ]
-
-  v(0.8em)
+  stack(
+    spacing: spacing.xs,
+    [
+      #subheader-style[#role]
+      #text(size: 10pt, weight: "medium")[#company] #h(1fr) #meta-text[#period]
+    ],
+    summary,
+    if highlights != none and highlights.len() > 0 [
+      #bullet-list(highlights)
+    ]
+  )
+  v(spacing.md)
 }
 
 #let education-entry(role, institution, location, period, summary, highlights) = {
-  grid(
-    columns: (1fr, auto),
-    subheader-style[#role],
-    if period != none { meta-text[#period] }
+  stack(
+    spacing: spacing.sm,
+    [
+      #grid(
+        columns: (1fr, auto),
+        subheader-style[#role],
+        if period != none { meta-text[#period] }
+      )
+      #text(weight: "medium", size: 9.5pt)[#institution]
+      #if location != none [
+        #text(size: 9pt, fill: secondary-color)[ • #location]
+      ]
+    ],
+    summary,
+    if highlights != none [
+      #bullet-list(highlights)
+    ]
   )
-
-  text(weight: "medium", size: 9.5pt)[#institution]
-  if location != none [
-    text(size: 9pt, fill: secondary-color)[ • #location]
-  ]
-
-  v(0.3em)
-  summary
-
-  v(0.3em)
-  if highlights != none [
-    #bullet-list(highlights)
-  ]
-
-  v(0.8em)
+  v(spacing.md)
 }
 
 
@@ -226,9 +239,53 @@
 }
 
 #let language-entry(language, level) = {
-  text(weight: "medium", size: 9.5pt)[#upper(language.first()) + language.slice(1):]
-  text(size: 9pt)[#level]
-  v(0.15em)
+  let level-mapping = (
+    "native": 5,
+    "advanced": 4,
+    "intermediate": 3,
+    "basic": 2,
+    "beginner": 1
+  )
+  
+  let language-level = level-mapping.at(level, default: 3)
+  
+  stack(
+    spacing: 0.3em,
+    [
+      #text(size: 10pt, weight: "medium")[#language] 
+      #text(size: 9pt, fill: rgb("#6b7280"))[(#level)]
+    ],
+    // Rectangle ratings
+    dot-ratings(
+      language-level,
+      5,
+      size: 6pt,
+      spacing: 1pt,
+      color-active: rgb("#374151"),
+      color-inactive: rgb("#e5e7eb")
+    )
+  )
+}
+
+#let hobby-list(hobbies) = {
+  stack(
+    spacing: 0.3em,
+    ..hobbies.map(hobby => [
+      #text(size: 10pt)[#hobby]
+    ])
+  )
+}
+
+#let publication-entry(title, date, description) = {
+  stack(
+    spacing: spacing.xs,
+    [
+      #text(size: 10pt, weight: "medium")[#title]
+      #meta-text[#date]
+    ],
+    text(size: 9pt, style: "italic")[#description]
+  )
+  v(spacing.sm)
 }
 
 #let volunteer-entry(title, description) = {
@@ -253,19 +310,13 @@
 }
 
 #let cover-letter-content(opening, body-paragraphs, closing) = {
-  v(1.5em)
-
-  // Opening paragraph
-  opening
-
-  v(1em)
-
-  // Body paragraphs
-  for paragraph in body-paragraphs [
-    #paragraph
-    #v(1em)
-  ]
-
-  // Closing
-  closing
+  stack(
+    spacing: spacing.lg,
+    [
+      #v(spacing.xl)
+      #opening
+    ],
+    ..body-paragraphs.map(p => [#p]),
+    closing
+  )
 }

@@ -59,8 +59,12 @@ else
     OUTPUT_FILE="resume.pdf"
 fi
 
-# Compile the resume with font path
-typst compile --font-path data/assets/fonts main.typ "$OUTPUT_FILE"
+# Compile the resume with font path and optional cover parameter
+if [[ -n "$COVER_COMPANY" ]]; then
+    typst compile --font-path data/assets/fonts --input cover="$COVER_COMPANY" main.typ "$OUTPUT_FILE"
+else
+    typst compile --font-path data/assets/fonts main.typ "$OUTPUT_FILE"
+fi
 
 if [ $? -eq 0 ]; then
     echo "✅ Resume compiled successfully: $OUTPUT_FILE"
