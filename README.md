@@ -8,4 +8,6 @@ See RESUME.md
 
 -->
 
-👛 Chaos to Clarity pinke.agentrebel.net
+## Projects:
+
+👛 (Pinke - Chaos to Clarity)[pinke.agentrebel.net]
