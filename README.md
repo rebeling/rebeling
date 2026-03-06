@@ -12,4 +12,4 @@ See RESUME.md
 
 Why is so much month left at the end of the money?
 
-👛 [pinke.agentrebel.net](pinke.agentrebel.net)
+👛 [pinke.agentrebel.net](https://pinke.agentrebel.net)
