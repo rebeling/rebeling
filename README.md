@@ -7,3 +7,5 @@ Based on Martin Fowlers Any fool can...
 See RESUME.md
 
 -->
+
+👛 Chaos to Clarity pinke.agentrebel.net
