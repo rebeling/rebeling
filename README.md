@@ -8,8 +8,6 @@ See RESUME.md
 
 -->
 
-## Chaos to Clarity
-
-Why is so much month left at the end of the money?
+# Why is so much month left at the end of the money?
 
 👛 [pinke.agentrebel.net](https://pinke.agentrebel.net)
