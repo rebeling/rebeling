@@ -3,6 +3,22 @@
 node_modules
 package.json
 package-lock.json
-CLAUDE.md
-*.pdf
 data/secrets.yml
+
+CLAUDE.md
+AGENTS.md
+
+*.pdf
+
+# Downloaded assets
+data/assets/fonts/
+
+# Company specific data
+data/cover-*.yml
+!data/cover-example.yml
+!data/cover-example_de.yml
+
+trash
+example
+output
+task-list.md
