@@ -15,3 +15,9 @@ Based on [Martin Fowlers](https://martinfowler.com) Any fool can write code...
 Check out Pinke. It is a privacy-minded tool that turns bank statements into a spending picture with categories, tags, trends, and reports. It’s rule-based, so classifications are predictable, transparent, and easy to adjust.
 
 👛 [pinke.pro](https://pinke.pro)
+
+
+---
+
+### 📄 Modern Typst CV Generator
+A YAML-driven, multi-language CV engine. See [CV.md](./CV.md) for usage.
