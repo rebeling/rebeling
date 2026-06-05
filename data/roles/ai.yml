@@ -1,0 +1,27 @@
+# Role override: AI Engineer
+# Targets: Median, FRITZ, Ampeers, Experience One
+# Merged over data/cv.yml — only keys that differ from base.
+
+position: "AI Engineer"
+
+# Summary stays the base cv.yml text (better voice). Only position + skills order differ.
+# Skills reordered to lead with AI/ML relevance for this role.
+skills:
+  headline: Skills
+  name-level:
+    LLM / GenAI: Experienced
+    NLP: Experienced
+    RAG: Proficient
+    Agentic Coding: Experienced
+    Machine Learning: Proficient
+    Dialog Systems: Experienced
+    Python: Expert
+    FastAPI: Expert
+    Elasticsearch: Expert
+    System Design: Experienced
+    Docker: Experienced
+    PostgreSQL: Experienced
+    Redis: Experienced
+    AWS: Intermediate
+    CI/CD: Experienced
+    Requirement Analysis: Expert

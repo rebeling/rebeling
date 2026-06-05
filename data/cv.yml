@@ -1,0 +1,233 @@
+firstname: Matthias
+lastname: Rebel
+pronouns: "he/him"
+short-description: Computational Linguist turned Software Engineer building scalable language tech.
+position: "Senior Software Engineer"
+github: rebeling
+linkedin: https://www.linkedin.com/in/matthias-rebel-525b3333/
+website: https://rebeling.github.io/agent-rebel/
+
+layout:
+  page:
+    left_pt: 30
+    right_pt: 30
+    top_pt: 45
+    bottom_pt: 30
+  columns:
+    left_pt: 350
+    right_pt: 159
+    gap_pt: 28
+  header:
+    name_size_pt: 30
+    position_size_pt: 12
+    position_gap_pt: 0
+    contact_size_pt: 10
+  divider:
+    top_gap_pt: 12
+    bottom_gap_pt: 8
+    stroke_pt: 0.75
+  markers:
+    rating_square_pt: 12
+    rating_gap_pt: 1.5
+    icon_square_pt: 12
+    icon_gap_pt: 1.5
+# address-street: Castorring 32
+# address-city: Bernau bei Berlin, DE
+# address-postal: 16321
+
+# birth-day: "5"
+# birth-month: "May"
+# birth-year: "1979"
+
+languages:
+  German:
+    level: "native"
+  English:
+    level: "advanced"
+
+introduction:
+  headline: Professional Summary
+  text: |
+    I'm a passionate software developer who pairs deep technical expertise with a wide strategic lens. My background in computational linguistics lets me weave human-language technologies, machine learning, and AI into products that engage users and unlock new value. I'm currently diving into multi-agent systems, exploring how autonomous agents can cooperate to solve problems.
+
+    Whether I'm building large-scale NLP pipelines or refining user flows, I keep one eye on the technical detail and the other on the bigger business goal. I thrive on continuous improvement: digging into complex topics, sharing what I learn, and iterating quickly through agile practices and automation. That mix of specialisation and generalist mindset helps me deliver high-impact, real-world solutions on fast timelines. I approach every project with curiosity, empathy, and a bias for action and aligning smart technology choices with clear business outcomes.
+
+jobs:
+  headline: Professional Experience
+  items:
+    uv:
+      link: https://www.universum.com/
+      name: Universum AG
+      role: Senior Software Engineer
+      from: 2018
+      from-month: OCT
+      to: PRESENT
+      summary: >-
+        Led full-stack development and AI integration for mission-critical projects, aligning deep technical implementation with strategic business goals. Spearheaded initiatives in automation, NLP, and secure systems design, contributing to product innovation, user engagement, and operational efficiency across the organisation.
+      highlights:
+        - Designed and implemented an AI-powered tool integrating chatbot capabilities with automated email responses, leveraging the company's knowledge base and ChatGPT (Docker, Python, FastAPI, OpenAI, Redis, JavaScript, Vue.js, GitLab CI).
+        - Engineered APIs for Belenios secure cryptographic online voting system integration, supporting 60,000 users and sustaining ~20 votes/second (600 per 30s) (Python, FastAPI).
+        - Built and maintained a scalable content pool aggregating news and events data for seamless mobile app integration (Python, Elasticsearch).
+        - Developed a custom Drupal module with AI-driven, NLP-enhanced search functionality (PHP, Python, Watson, spaCy, Elasticsearch).
+        - Optimised team Git workflows and CI/CD pipelines, significantly reducing deployment time and boosting collaboration efficiency (Git, GitLab, Make, Ansible).
+        - Organized and hosted local Drupal Meetups, driving community engagement and knowledge sharing.
+
+    rtr:
+      link: https://www.retresco.com/
+      name: Retresco GmbH
+      role: Software Engineer
+      from: 2011
+      from-month: DEC
+      to: 2018
+      to-month: JUL
+      summary: >-
+        Owned core architecture and development of real-time, high-performance systems in a fast-paced consulting and product delivery environment. Delivered robust microservices and data pipelines that enabled personalisation, automation, and scalable deployment.
+      highlights:
+        - Developed a real-time stream processing pipeline and personalisation algorithm for adaptive content delivery (Python, Flask, Kafka, Elasticsearch).
+        - Provided technical consultancy to enterprise clients, guiding architecture decisions and best practices across projects.
+        - Led refactoring of legacy monoliths into containerised microservices, introducing CI/CD automation and scalable infrastructure (Microservices).
+        - Designed and implemented a web-based GUI for a Translation Management System with seamless frontend-backend integration (AngularJS, Tornado, Elasticsearch).
+        - Developed a relation extraction system for short message analysis, enabling efficient insights from unstructured text data.
+
+    dfki-job:
+      name: DFKI GmbH
+      role: Student Researcher
+      from: 2009
+      from-month: MAY
+      to: 2011
+      to-month: APR
+      location: BERLIN
+      summary: >-
+        Contributed to the development of a multilingual mobile dialogue assistant. Designed a classification algorithm to detect question–answer pairs and improved dialogue structures for a diploma thesis project.
+      highlights:
+        - Developed multilingual mobile dialogue assistant (PHP, Objective-C).
+        - Designed classification algorithm for question-answer pair detection.
+        - Enhanced user interaction and dialogue structures for diploma thesis project.
+
+    potsdam-job:
+      name: Universität Potsdam
+      role: Student Researcher
+      from: 2006
+      from-month: MAR
+      to: 2009
+      to-month: FEB
+      summary: >-
+        Converted Word documents to XML for eXist-db (Python, Tomcat).
+      highlights:
+        - Developed data retrieval interface for project website (Python).
+        - Built CMS for personal staff websites (Python).
+
+    pfefferwerk:
+      name: Pfefferwerk gGmbH
+      role: Media Educator
+      from: 2003
+      from-month: SEP
+      to: 2005
+      to-month: JUL
+      summary: >-
+        Conducted lectures on computer interaction for children and trainees.
+
+
+education:
+  headline: Education
+  items:
+    uni-potsdam:
+      name: Universität Potsdam
+      role: Diploma in Computational Linguistics
+      from: "2005"
+      from-month: OCT
+      to: "2011"
+      to-month: OCT
+      summary: >-
+        Diploma thesis "Optimierung der Dialogstrukturen einer bilingualen elektronischen Kommunikationshilfe" at Universität Potsdam (published Oct 01, 2011). Co-authored related paper "Computer Assistance in Bilingual Task-Oriented Human-Human Dialogues" in Proceedings of the 14th International Conference on Human-Computer Interaction (Jul 2011), prior to diploma thesis.
+
+certificates:
+  headline: Courses
+  items:
+    aws:
+      title: Ultimate AWS Certified Developer Associate DVA-C02
+      place: Udemy
+      date: JAN 2025
+    ai-driven:
+      title: "AI-Driven Management: Leading More Efficiently"
+      place: LinkedIn
+      date: JAN 2025
+    design:
+      title: Design of Computer Programs
+      place: Udacity
+      date: MAY 2017
+    sys-eng:
+      title: Introduction to Systems Engineering
+      place: Coursera
+      date: JAN 2017
+
+skills:
+  headline: Skills
+  name-level:
+    Python: Expert
+    PHP: Experienced
+    Node.js: Experienced
+    PostgreSQL: Experienced
+    Redis: Experienced
+    Elasticsearch: Expert
+    Docker: Experienced
+    FastAPI: Expert
+    NLP: Experienced
+    Machine Learning: Proficient
+    Agentic Coding: Experienced
+    Requirement Analysis: Expert
+    Dialog Systems: Experienced
+    System Design: Experienced
+    CI/CD: Experienced
+    LLM / GenAI: Experienced
+    RAG: Proficient
+    AWS: Intermediate
+
+explored:
+  headline: Explored
+  items:
+    - cognee
+    - haystack
+    - ansible
+    - lovable
+    - antigravity
+    - spaCy
+    - Voice AI
+    - TTS
+    - ASR
+    - LanceDB
+    - Rust
+    - Temporal
+
+volunteer:
+  headline: Volunteer & Open Source
+  entries:
+    - text: |
+        Supported event logistics and speaker coordination at *PyData Berlin 2016*, a community-driven conference focused on data science, machine learning, and Python. Helped ensure smooth operations for over 500 participants.
+    - text: |
+        Active in the *Drupal Community* - hosted local Drupal Meetup Berlin sessions, contributed module development, and engaged in knowledge sharing across the community.
+    - text: |
+        Maintain personal *Open Source* projects and contribute to community repositories on GitHub (#link("https://github.com/rebeling")[github.com/rebeling]).
+
+references:
+  headline: References
+  items:
+    - name: Dr. Christoph Teichmann
+      title: Senior Machine Learning Research Engineer
+      text: Former project collaborator at university
+      company: Bloomberg
+      linkedin: https://www.linkedin.com/in/christoph-teichmann-385871167/
+    - name: Tarn Barford
+      title: Lead Engineer
+      text: Former colleague at retresco
+      company: MPB
+      linkedin: https://www.linkedin.com/in/tarn-barford-a6a83814/
+
+hobbies:
+  headline: Hobbies
+  items:
+    - Sustainable Living
+    - Aquaponics
+    - Permaculture
+    - Wildlife Tracking
+    - Forest Ecology

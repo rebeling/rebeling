@@ -1,0 +1,25 @@
+# Role override: Senior Fullstack
+# Merged over data/cv.yml — only keys that differ from base.
+
+position: "Senior Fullstack Engineer"
+
+# Summary stays the base cv.yml text (better voice). Only position + skills order differ.
+# Skills reordered to lead with fullstack relevance for this role.
+skills:
+  headline: Skills
+  name-level:
+    Python: Expert
+    Node.js: Experienced
+    PostgreSQL: Experienced
+    FastAPI: Expert
+    Elasticsearch: Expert
+    Redis: Experienced
+    Docker: Experienced
+    PHP: Experienced
+    System Design: Experienced
+    CI/CD: Experienced
+    AWS: Intermediate
+    Requirement Analysis: Expert
+    NLP: Experienced
+    LLM / GenAI: Experienced
+    Machine Learning: Proficient

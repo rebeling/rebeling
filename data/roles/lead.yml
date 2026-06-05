@@ -1,0 +1,26 @@
+# Role override: Lead / Architect
+# Targets: MaibornWolff, Einhundert, Staff/Principal roles
+# Merged over data/cv.yml — only keys that differ from base.
+
+position: "Lead Engineer / Software Architect"
+
+# Summary stays the base cv.yml text (better voice). Only position + skills order differ.
+# Skills reordered to lead with architecture / leadership relevance.
+skills:
+  headline: Skills
+  name-level:
+    System Design: Experienced
+    Requirement Analysis: Expert
+    CI/CD: Experienced
+    Python: Expert
+    FastAPI: Expert
+    Elasticsearch: Expert
+    Docker: Experienced
+    PostgreSQL: Experienced
+    Redis: Experienced
+    Node.js: Experienced
+    PHP: Experienced
+    AWS: Intermediate
+    NLP: Experienced
+    LLM / GenAI: Experienced
+    Machine Learning: Proficient
