@@ -1,35 +1,63 @@
-// Main entry point for resume generation - Modern Typst approach
+// Main entry point for CV generation - Modern Typst approach
 
-#import "template/resume.typ": resume-template
+#import "template/cv.typ": cv-template
 
-// Load resume data
-#let base-resume-data = yaml("data/resume.yml")
+// Recursively deep-merge two dicts: values in `b` win, nested dicts merge.
+#let deep-merge(a, b) = {
+  let result = a
+  for (key, b-val) in b {
+    if key in result and type(result.at(key)) == dictionary and type(b-val) == dictionary {
+      result.insert(key, deep-merge(result.at(key), b-val))
+    } else {
+      result.insert(key, b-val)
+    }
+  }
+  result
+}
+
+// Load CV data
+#let lang = sys.inputs.at("lang", default: "en")
+#let cv-file = if lang == "en" { "data/cv.yml" } else { "data/cv_" + lang + ".yml" }
+#let base-cv-data = yaml(cv-file)
+
+// Load role override (if a role is selected), e.g. data/roles/ai.yml
+#let role = sys.inputs.at("role", default: none)
+#let role-data = if role != none { yaml("data/roles/" + role + ".yml") } else { (:) }
 
 // Load secrets (PII)
 // Warning: This file must exist. If missing, create data/secrets.yml
 #let secrets-data = yaml("data/secrets.yml")
 
-// Merge secrets into resume data
-#let resume-data = base-resume-data + secrets-data
+// Merge order: base CV <- role override <- secrets (PII always wins)
+#let cv-data = deep-merge(deep-merge(base-cv-data, role-data), secrets-data)
 
 // Try to load cover letter data (if available)
 #let cover-letter-data = {
   // Check for cover letter argument or default file
   if sys.inputs.at("cover", default: none) != none {
-    yaml("data/cover-" + sys.inputs.cover + ".yml")
+    let cover-file = if lang == "en" {
+      "data/cover-" + sys.inputs.cover + ".yml"
+    } else {
+      "data/cover-" + sys.inputs.cover + "_" + lang + ".yml"
+    }
+    // Check if translated cover letter exists, fallback to default
+    // Typst's yaml() doesn't have an easy "exists" check, so we assume it exists if lang is provided
+    // or we might need a more robust check if we wanted to fallback automatically.
+    yaml(cover-file)
   } else {
     none
   }
 }
 
-// Use the modernized resume template
-#show: doc => resume-template(
-  name: resume-data.firstname + " " + resume-data.lastname,
-  resume-data: resume-data,
+// Use the modernized CV template
+#show: doc => cv-template(
+  name: cv-data.firstname + " " + cv-data.lastname,
+  cv-data: cv-data,
   cover-letter-data: cover-letter-data,
   include-cover-letter: cover-letter-data != none,
+  lang: lang,
   doc
 )
 
 // Any additional content can be added here
-// The template will handle all the resume sections automatically
+// The template will handle all the CV sections automatically
