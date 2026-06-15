@@ -13,6 +13,9 @@
   cover-letter-data: none,
   include-cover-letter: false,
 
+  // Output mode: "full" (cover + cv), "cover" (cover only), "cv" (cv only)
+  mode: "full",
+
   // Optional parameters
   lang: "en",
 
@@ -50,17 +53,19 @@
   // Apply document setup
   setup-document(name, [
 
-    // Cover Letter Section (if included)
-    #if include-cover-letter and cover-letter-data != none [
+    // Cover Letter Section (if included and not in cv-only mode)
+    #if mode != "cv" and include-cover-letter and cover-letter-data != none [
 
       // Use same header as CV
       #name-header(cv-data, layout-config: layout-config)
 
       #section-divider(layout-config: layout-config)
 
-      // Single column matching CV main column width
-      #let cover-main-width = if has-fixed-columns { content-columns.at(0) } else { 100% }
-      #block(width: cover-main-width)[
+      // Shared width for all cover content below the divider
+      #let cover-text-width = if has-fixed-columns {
+        content-columns.at(0) + column-gutter + content-columns.at(1) * 0.3
+      } else { 100% }
+      #block(width: cover-text-width)[
         #grid(
           columns: (1fr, auto),
           align: (left, right),
@@ -69,13 +74,16 @@
         )
 
         #v(1em)
-        #header-style[#t.re #cover-letter-data.company.position - #cover-letter-data.company.department]
+        #let dept-suffix = if "department" in cover-letter-data.company { " - " + cover-letter-data.company.department } else { "" }
+        #header-style[#cover-letter-data.company.position#dept-suffix]
         #if "reference" in cover-letter-data.application [
           #linebreak()
           #text(size: 9pt, style: "italic")[#cover-letter-data.application.reference]
         ]
         #v(0.5em)
+      ]
 
+      #block(width: cover-text-width)[
         #set par(justify: false)
         #set text(size: default-body-pt * 1pt, fill: secondary-color)
         // If the YAML uses a `template:` key, build the letter from a role template
@@ -99,9 +107,11 @@
         )
       ]
 
-      #pagebreak()
+      #if mode == "full" { pagebreak() }
     ]
 
+    // CV body (skip in cover-only mode)
+    #if mode != "cover" [
     // Header Section
     #name-header(cv-data, layout-config: layout-config)
 
@@ -196,14 +206,14 @@
         ],
         [
           // Hobbies Section
-          #v(1em)
+          #v(0.3em)
           #header-style[#cv-data.hobbies.headline]
           #v(0.2em)
           #hobby-list(cv-data.hobbies.items)
         ],
         [
           // Volunteer & Open Source Section
-          #v(1em)
+          #v(0.3em)
           #header-style[#cv-data.volunteer.headline]
           #v(0.2em)
           #for entry in cv-data.volunteer.entries [
@@ -212,7 +222,7 @@
         ],
         [
           #if "references" in cv-data [
-            #v(0.6em)
+            #v(0.3em)
             #header-style[#cv-data.references.headline]
             #v(0.2em)
             #for item in cv-data.references.items [
@@ -241,6 +251,7 @@
         ]
       )
     )
+    ]
 
     // Additional content from doc parameter
     #doc

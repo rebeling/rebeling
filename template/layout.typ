@@ -443,7 +443,7 @@ stack(
 
 #let cover-letter-content(opening, body-paragraphs, closing) = {
   stack(
-    spacing: spacing.lg,
+    spacing: spacing.xl,
     [
       #v(spacing.xl)
       #opening

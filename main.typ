@@ -35,15 +35,9 @@
 #let cover-letter-data = {
   // Check for cover letter argument or default file
   if sys.inputs.at("cover", default: none) != none {
-    let cover-file = if lang == "en" {
-      "data/cover-" + sys.inputs.cover + ".yml"
-    } else {
-      "data/cover-" + sys.inputs.cover + "_" + lang + ".yml"
-    }
-    // Check if translated cover letter exists, fallback to default
-    // Typst's yaml() doesn't have an easy "exists" check, so we assume it exists if lang is provided
-    // or we might need a more robust check if we wanted to fallback automatically.
-    yaml(cover-file)
+    // One cover file per company. Its content language is whatever you write
+    // in the YAML (incl. the date string); lang only affects CV section labels.
+    yaml("data/cover-" + sys.inputs.cover + ".yml")
   } else {
     none
   }
@@ -55,6 +49,7 @@
   cv-data: cv-data,
   cover-letter-data: cover-letter-data,
   include-cover-letter: cover-letter-data != none,
+  mode: sys.inputs.at("mode", default: "full"),
   lang: lang,
   doc
 )
