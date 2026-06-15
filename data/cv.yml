@@ -2,7 +2,7 @@ firstname: Matthias
 lastname: Rebel
 pronouns: "he/him"
 short-description: Computational Linguist turned Software Engineer building scalable language tech.
-position: "Senior Software Engineer"
+position: "Senior Software Engineer & Architect"
 github: rebeling
 linkedin: https://www.linkedin.com/in/matthias-rebel-525b3333/
 website: https://rebeling.github.io/agent-rebel/
@@ -58,18 +58,30 @@ jobs:
     uv:
       link: https://www.universum.com/
       name: Universum AG
-      role: Senior Software Engineer
-      from: 2018
-      from-month: OCT
+      role: Senior Software Engineer & Architect
+      from: 2023
+      from-month: AUG
       to: PRESENT
       summary: >-
         Led full-stack development and AI integration for mission-critical projects, aligning deep technical implementation with strategic business goals. Spearheaded initiatives in automation, NLP, and secure systems design, contributing to product innovation, user engagement, and operational efficiency across the organisation.
       highlights:
         - Designed and implemented an AI-powered tool integrating chatbot capabilities with automated email responses, leveraging the company's knowledge base and ChatGPT (Docker, Python, FastAPI, OpenAI, Redis, JavaScript, Vue.js, GitLab CI).
         - Engineered APIs for Belenios secure cryptographic online voting system integration, supporting 60,000 users and sustaining ~20 votes/second (600 per 30s) (Python, FastAPI).
+        - Optimised team Git workflows and CI/CD pipelines, significantly reducing deployment time and boosting collaboration efficiency (Git, GitLab, Make, Ansible).
+
+    uv-eng:
+      link: https://www.universum.com/
+      name: Universum AG
+      role: Senior Software Engineer
+      from: 2018
+      from-month: OCT
+      to: 2023
+      to-month: JUL
+      summary: >-
+        Drove full-stack development across the organisation's core products, delivering automation, NLP, and content features that boosted user engagement and operational efficiency.
+      highlights:
         - Built and maintained a scalable content pool aggregating news and events data for seamless mobile app integration (Python, Elasticsearch).
         - Developed a custom Drupal module with AI-driven, NLP-enhanced search functionality (PHP, Python, Watson, spaCy, Elasticsearch).
-        - Optimised team Git workflows and CI/CD pipelines, significantly reducing deployment time and boosting collaboration efficiency (Git, GitLab, Make, Ansible).
         - Organized and hosted local Drupal Meetups, driving community engagement and knowledge sharing.
 
     rtr:
@@ -98,11 +110,7 @@ jobs:
       to-month: APR
       location: BERLIN
       summary: >-
-        Contributed to the development of a multilingual mobile dialogue assistant. Designed a classification algorithm to detect question–answer pairs and improved dialogue structures for a diploma thesis project.
-      highlights:
-        - Developed multilingual mobile dialogue assistant (PHP, Objective-C).
-        - Designed classification algorithm for question-answer pair detection.
-        - Enhanced user interaction and dialogue structures for diploma thesis project.
+        Contributed to a multilingual mobile dialogue assistant and designed a classification algorithm for question-answer pair detection and dialogue optimization.
 
     potsdam-job:
       name: Universität Potsdam
@@ -112,10 +120,7 @@ jobs:
       to: 2009
       to-month: FEB
       summary: >-
-        Converted Word documents to XML for eXist-db (Python, Tomcat).
-      highlights:
-        - Developed data retrieval interface for project website (Python).
-        - Built CMS for personal staff websites (Python).
+        Developed Python-based tools for document conversion, data retrieval, and CMS functionality for project and staff websites.
 
     pfefferwerk:
       name: Pfefferwerk gGmbH
@@ -180,8 +185,8 @@ skills:
     System Design: Experienced
     CI/CD: Experienced
     LLM / GenAI: Experienced
-    RAG: Proficient
-    AWS: Intermediate
+    RAG: Experienced
+    AWS: Proficient
 
 explored:
   headline: Explored
@@ -198,6 +203,7 @@ explored:
     - LanceDB
     - Rust
     - Temporal
+    - paperless-ngx
 
 volunteer:
   headline: Volunteer & Open Source
@@ -205,7 +211,7 @@ volunteer:
     - text: |
         Supported event logistics and speaker coordination at *PyData Berlin 2016*, a community-driven conference focused on data science, machine learning, and Python. Helped ensure smooth operations for over 500 participants.
     - text: |
-        Active in the *Drupal Community* - hosted local Drupal Meetup Berlin sessions, contributed module development, and engaged in knowledge sharing across the community.
+        Active in the *Drupal Community* - hosted local Drupal Meetup Berlin sessions, contributed development, and engaged in knowledge sharing across the community.
     - text: |
         Maintain personal *Open Source* projects and contribute to community repositories on GitHub (#link("https://github.com/rebeling")[github.com/rebeling]).
 

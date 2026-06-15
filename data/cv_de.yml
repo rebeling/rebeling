@@ -2,7 +2,7 @@ firstname: Matthias
 lastname: Rebel
 pronouns: "er/ihm"
 short-description: Computerlinguist und Softwareentwickler spezialisiert auf skalierbare Sprachtechnologien.
-position: "Senior Softwareentwickler"
+position: "Senior Softwareentwickler & Architekt"
 github: rebeling
 linkedin: https://www.linkedin.com/in/matthias-rebel-525b3333/
 website: https://rebeling.github.io/agent-rebel/
@@ -14,8 +14,8 @@ layout:
     top_pt: 45
     bottom_pt: 30
   columns:
-    left_pt: 350
-    right_pt: 159
+    left_pt: 375
+    right_pt: 134
     gap_pt: 28
   header:
     name_size_pt: 30
@@ -41,9 +41,9 @@ languages:
 introduction:
   headline: Zusammenfassung
   text: |
-    Ich bin ein leidenschaftlicher Softwareentwickler, der tiefes technisches Fachwissen mit einem breiten strategischen Blick verbindet. Mein Hintergrund in der Computerlinguistik ermöglicht es mir, Sprachtechnologien, maschinelles Lernen und KI in Produkte einzubinden, die Nutzer begeistern und neuen Mehrwert schaffen. Aktuell beschäftige ich mich intensiv mit Multi-Agenten-Systemen und der Frage, wie autonome Agenten kooperieren können, um komplexe Probleme zu lösen.
+    Ich bin ein leidenschaftlicher Softwareentwickler, der tiefes technisches Fachwissen mit einem breiten strategischen Blick verbindet. Mein Hintergrund in der Computerlinguistik ermöglicht es mir, Sprachtechnologien, maschinelles Lernen und KI in Produkte einzubinden, die Nutzer unterstützen und neuen Mehrwert schaffen. Aktuell beschäftige ich mich intensiv mit Multi-Agenten-Systemen und der Frage, wie autonome Agenten kooperieren können, um komplexe Probleme zu lösen.
 
-    Egal, ob ich großskalierte NLP-Pipelines aufbaue oder User-Flows verfeinere, ich behalte stets sowohl das technische Detail als auch das übergeordnete Geschäftsziel im Blick. Ich setze auf kontinuierliche Verbesserung: Ich vertiefe mich in komplexe Themen, teile mein Wissen und iteriere schnell durch agile Praktiken und Automatisierung. Diese Mischung aus Spezialisierung und Generalisten-Mentalität hilft mir, hochwirksame Lösungen in kurzen Zeiträumen zu liefern. Ich gehe jedes Projekt mit Neugier, Empathie und Tatendrang an, um kluge Technologieentscheidungen mit klaren Geschäftsergebnissen in Einklang zu bringen.
+    Ob ich NLP-Pipelines für große Datenmengen aufbaue oder die Nutzerführung verfeinere, ich behalte stets sowohl das technische Detail als auch das übergeordnete Geschäftsziel im Blick. Ich setze auf kontinuierliche Verbesserung: Ich vertiefe mich in komplexe Themen, teile mein Wissen und iteriere schnell durch agile Praktiken und Automatisierung. Diese Mischung aus Spezialisierung und Generalisten-Mentalität hilft mir, hochwirksame Lösungen in kurzen Zeiträumen zu liefern. Ich gehe jedes Projekt mit Neugier, Empathie und Umsetzungsstärke an, um kluge Technologieentscheidungen mit klaren Geschäftsergebnissen in Einklang zu bringen.
 
 jobs:
   headline: Berufserfahrung
@@ -51,19 +51,30 @@ jobs:
     uv:
       link: https://www.universum.com/
       name: Universum AG
-      role: Senior Software Entwickler
-      from: 2018
-      from-month: OKT
+      role: Senior Softwareentwickler & Architekt
+      from: 2023
+      from-month: AUG
       to: HEUTE
       summary: >-
         Leitung der Full-Stack-Entwicklung und KI-Integration für unternehmenskritische Projekte, Abstimmung der technischen Implementierung mit strategischen Geschäftszielen. Federführung bei Initiativen in den Bereichen Automatisierung, NLP und sicheres Systemdesign, Beitrag zur Produktinnovation, Nutzerbindung und betrieblichen Effizienz im gesamten Unternehmen.
       highlights:
         - Entwurf und Implementierung eines KI-gestützten Tools zur Integration von Chatbot-Funktionen mit automatisierten E-Mail-Antworten unter Nutzung der Wissensdatenbank des Unternehmens und ChatGPT (Docker, Python, FastAPI, OpenAI, Redis, JavaScript, Vue.js, GitLab CI).
         - Entwicklung von APIs für die Integration des sicheren kryptografischen Online-Wahlsystems Belenios, Unterstützung von 60.000 Nutzern und Bewältigung von ~20 Stimmen/Sekunde (600 pro 30s) (Python, FastAPI).
+        - Optimierung der Git-Workflows und CI/CD-Pipelines im Team, was die Bereitstellungszeit erheblich verkürzte und die Effizienz der Zusammenarbeit steigerte (Git, GitLab, Make, Ansible).
+
+    uv-eng:
+      link: https://www.universum.com/
+      name: Universum AG
+      role: Senior Softwareentwickler
+      from: 2018
+      from-month: OKT
+      to: 2023
+      to-month: JUL
+      summary: >-
+        Vorantreiben der Full-Stack-Entwicklung über die Kernprodukte des Unternehmens hinweg, Bereitstellung von Automatisierungs-, NLP- und Content-Funktionen zur Steigerung der Nutzerbindung und betrieblichen Effizienz.
+      highlights:
         - Aufbau und Pflege eines skalierbaren Content-Pools zur Aggregation von Nachrichten- und Eventdaten für die nahtlose Integration in mobile Apps (Python, Elasticsearch).
         - Entwicklung eines benutzerdefinierten Drupal-Moduls mit KI-gesteuerter, NLP-erweiterter Suchfunktionalität (PHP, Python, Watson, spaCy, Elasticsearch).
-        - Optimierung der Git-Workflows und CI/CD-Pipelines im Team, was die Bereitstellungszeit erheblich verkürzte und die Effizienz der Zusammenarbeit steigerte (Git, GitLab, Make, Ansible).
-        - Organisation und Hosting lokaler Drupal-Meetups zur Förderung des Community-Engagements und des Wissensaustauschs.
 
     rtr:
       link: https://www.retresco.com/
@@ -76,11 +87,10 @@ jobs:
       summary: >-
         Verantwortlich für die Kernarchitektur und Entwicklung von Echtzeit-Hochleistungssystemen in einem schnelllebigen Beratungs- und Produktumfeld. Bereitstellung robuster Microservices und Datenpipelines für Personalisierung, Automatisierung und skalierbare Deployments.
       highlights:
-        - Entwicklung einer Echtzeit-Stream-Processing-Pipeline und eines Personalisierungsalgorithmus für adaptive Content-Bereitstellung (Python, Flask, Kafka, Elasticsearch).
+        - Entwicklung einer Stream-Processing-Pipeline zur adaptiven Content-Personalisierung.
         - Technische Beratung für Unternehmenskunden zu Architekturfragen und Best Practices.
-        - Leitung des Refactorings von Legacy-Monolithen hin zu containerisierten Microservices, Einführung von CI/CD-Automatisierung und skalierbarer Infrastruktur (Microservices).
-        - Entwurf und Implementierung einer webbasierten GUI für ein Translation Management System mit nahtloser Frontend-Backend-Integration (AngularJS, Tornado, Elasticsearch).
-        - Entwicklung eines Systems zur Relationsextraktion für die Analyse von Kurznachrichten zur effizienten Gewinnung von Erkenntnissen aus unstrukturierten Textdaten.
+        - Leitung des Refactorings von Legacy-Monolithen zu containerisierten Microservices inklusive CI/CD und skalierbarer Infrastruktur.
+        - Relationsextraktion aus Kurznachrichten zur Analyse unstrukturierter Textdaten.
 
     dfki-job:
       name: DFKI GmbH
@@ -95,7 +105,6 @@ jobs:
       highlights:
         - Entwicklung eines mehrsprachigen mobilen Dialogassistenten (PHP, Objective-C).
         - Entwurf eines Klassifikationsalgorithmus zur Erkennung von Frage-Antwort-Paaren.
-        - Verbesserung der Nutzerinteraktion und Dialogstrukturen für das Diplomarbeitsprojekt.
 
     potsdam-job:
       name: Universität Potsdam
@@ -105,10 +114,10 @@ jobs:
       to: 2009
       to-month: FEB
       summary: >-
-        Konvertierung von Word-Dokumenten nach XML für eXist-db (Python, Tomcat).
+        Mitarbeit am Institut in verschiedenen Softwareprojekten mit Schwerpunkt auf Dokumentenverarbeitung und webbasierte Anwendungen.
       highlights:
-        - Entwicklung einer Datenschnittstelle für die Projektwebsite (Python).
-        - Erstellung eines CMS für persönliche Mitarbeiter-Websites (Python).
+        - Contentpool aus Word-Dokumenten und Online-Retrieval (eXist-db, XML, Tomcat).
+        - Erstellung eines CMS für persönliche Mitarbeiter-Webseiten (Python).
 
     pfefferwerk:
       name: Pfefferwerk gGmbH
@@ -118,7 +127,7 @@ jobs:
       to: 2005
       to-month: JUL
       summary: >-
-        Durchführung von Vorträgen und Kursen zur Computerinteraktion für Kinder und Auszubildende.
+        Vorträge und Kurse zu Computerwissen für Kinder und Auszubildende.
 
 
 education:
@@ -168,16 +177,16 @@ skills:
     NLP: Erfahren
     Machine Learning: Fortgeschritten
     Agentic Coding: Erfahren
-    Requirement Analysis: Experte
-    Dialog Systems: Erfahren
+    Anforderungsanalyse: Experte
+    Dialogsysteme: Erfahren
     System Design: Erfahren
     CI/CD: Erfahren
     LLM / GenAI: Erfahren
-    RAG: Fortgeschritten
-    AWS: Grundkenntnisse
+    RAG: Erfahren
+    AWS: Fortgeschritten
 
 explored:
-  headline: Erkundet
+  headline: R&D / Prototyping
   items:
     - cognee
     - haystack
@@ -191,14 +200,15 @@ explored:
     - LanceDB
     - Rust
     - Temporal
+    - paperless-ngx
 
 volunteer:
-  headline: Ehrenamt & Open Source
+  headline: Community & Open Source
   entries:
     - text: |
         Unterstützung der Event-Logistik und Sprecher-Koordination bei der *PyData Berlin 2016*, einer Community-Konferenz mit Schwerpunkt auf Data Science, Machine Learning und Python. Mitwirkung am reibungslosen Ablauf für über 500 Teilnehmer.
     - text: |
-        Aktiv in der *Drupal Community* - Hosting lokaler Drupal-Meetups in Berlin, Beiträge zur Modulentwicklung und Wissensaustausch innerhalb der Community.
+        Aktiv in der *Drupal Community* - Hosting lokaler Drupal-Meetups in Berlin, Beiträge zur Entwicklung und Wissensaustausch innerhalb der Community.
     - text: |
         Pflege persönlicher *Open Source* Projekte und Beiträge zu Community-Repositories auf GitHub (#link("https://github.com/rebeling")[github.com/rebeling]).
 
